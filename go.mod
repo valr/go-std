@@ -1,3 +1,3 @@
 module github.com/valr/go-std
 
-go 1.22.12
+go 1.22

@@ -1,5 +1,8 @@
 # Go Standard Library extensions
 
+[![Go](https://github.com/valr/go-std/workflows/Go/badge.svg)](https://github.com/valr/go-std/actions?query=workflow%3AGo)
+[![codecov](https://codecov.io/gh/valr/go-std/branch/main/graph/badge.svg)](https://codecov.io/gh/valr/go-std)
+
 A collection of Go packages extending the standard library
 
 ## Packages

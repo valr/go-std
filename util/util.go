@@ -9,8 +9,8 @@ import (
 // Return the filename and line number of the caller.
 func SourceInfo() string {
 	_, file, line, ok := runtime.Caller(1)
-	if !ok {
-		return "<unknown>" // not testable
+	if !ok { // not easily testable
+		return "<unknown>"
 	}
 	return fmt.Sprintf("%v:%v", filepath.Base(file), line)
 }

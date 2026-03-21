@@ -1,3 +1,4 @@
+// Package mathx provides utility functions for mathematical operations.
 package mathx
 
 type Number interface {
@@ -6,7 +7,7 @@ type Number interface {
 		~int | ~float32 | ~float64
 }
 
-// Compute the absolute value of a number.
+// Abs computes the absolute value of a number.
 func Abs[T Number](x T) T {
 	if x < 0 {
 		return -x
@@ -14,7 +15,7 @@ func Abs[T Number](x T) T {
 	return x
 }
 
-// Return the product of all numbers.
+// Product returns the product of all numbers.
 func Product[T Number](x ...T) T {
 	var product T
 	if len(x) > 0 {
@@ -26,7 +27,7 @@ func Product[T Number](x ...T) T {
 	return product
 }
 
-// Return the sum of all numbers.
+// Sum returns the sum of all numbers.
 func Sum[T Number](x ...T) T {
 	var sum T
 	for i := range x {

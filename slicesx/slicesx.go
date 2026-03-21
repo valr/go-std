@@ -1,3 +1,4 @@
+// Package slicesx provides utility functions for slice manipulation.
 package slicesx
 
 import (
@@ -30,7 +31,7 @@ func Create[T any](count int, x T) []T {
 	return slice
 }
 
-// Return a slice of all elements in the slice s that satisfy the predicate function f.
+// Filter returns a slice of all elements in the slice s that satisfy the predicate function f.
 func Filter[S ~[]T, T any](s S, f func(x T) bool) S {
 	filtered := make(S, len(s))
 	count := 0
@@ -43,7 +44,7 @@ func Filter[S ~[]T, T any](s S, f func(x T) bool) S {
 	return filtered[:count]
 }
 
-// Return a slice of all elements in the slice s that satisfy the predicate function f.
+// Filter2 returns a slice of all elements in the slice s that satisfy the predicate function f.
 func Filter2[S ~[]T, T any](s S, f func(x T, idx int) bool) S {
 	filtered := make(S, len(s))
 	count := 0
@@ -69,7 +70,7 @@ func Flatten[T any](s [][]T) []T {
 	return flattened
 }
 
-// Return the index of the first occurrence of sub in s, or -1 if not present.
+// Index returns the index of the first occurrence of sub in s, or -1 if not present.
 func Index[S ~[]T, T comparable](s S, sub S) int {
 next:
 	for i := range len(s) - len(sub) + 1 {
@@ -83,8 +84,8 @@ next:
 	return -1
 }
 
-// Return a slice of all elements that are present in all the given slices.
-// The order of the elements in the returned slice is not guaranteed to be the same as in the input slices.
+// Intersect returns a slice of all elements that are present in all the given slices.
+// The order of the elements in the returned slice is not guaranteed to be the same as in any of the input slices.
 func Intersect[T comparable](slices ...[]T) []T {
 	intersection := make([]T, 0)
 	if len(slices) == 0 {
@@ -117,7 +118,7 @@ func Intersect[T comparable](slices ...[]T) []T {
 	return intersection
 }
 
-// Return a slice by applying function f to each element in the slice s.
+// Map returns a slice by applying function f to each element in the slice s.
 func Map[S1 ~[]T1, S2 []T2, T1, T2 any](s S1, f func(x T1) T2) S2 {
 	mapped := make(S2, len(s))
 	for i := range s {
@@ -126,7 +127,7 @@ func Map[S1 ~[]T1, S2 []T2, T1, T2 any](s S1, f func(x T1) T2) S2 {
 	return mapped
 }
 
-// Return a slice by applying function f to each element in the slice s.
+// Map2 returns a slice by applying function f to each element in the slice s.
 func Map2[S1 ~[]T1, S2 []T2, T1, T2 any](s S1, f func(x T1, idx int) T2) S2 {
 	mapped := make(S2, len(s))
 	for i := range s {
@@ -135,7 +136,7 @@ func Map2[S1 ~[]T1, S2 []T2, T1, T2 any](s S1, f func(x T1, idx int) T2) S2 {
 	return mapped
 }
 
-// Return the result of applying a binary function f cumulatively to the elements of the slice s.
+// Reduce returns the result of applying a binary function f cumulatively to the elements of the slice s.
 func Reduce[S ~[]T1, T1, T2 any](s S, init T2, f func(acc T2, x T1) T2) T2 {
 	acc := init
 	for i := range s {
@@ -144,7 +145,7 @@ func Reduce[S ~[]T1, T1, T2 any](s S, init T2, f func(acc T2, x T1) T2) T2 {
 	return acc
 }
 
-// Return the result of applying a binary function f cumulatively to the elements of the slice s.
+// Reduce2 returns the result of applying a binary function f cumulatively to the elements of the slice s.
 func Reduce2[S ~[]T1, T1, T2 any](s S, init T2, f func(acc T2, x T1, idx int) T2) T2 {
 	acc := init
 	for i := range s {

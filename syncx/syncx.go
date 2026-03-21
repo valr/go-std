@@ -1,3 +1,4 @@
+// Package syncx provides utility functions for synchronization primitives.
 package syncx
 
 import (

@@ -1,10 +1,11 @@
+// Package matrix provides utility functions for matrix manipulation.
 package matrix
 
 import (
 	"github.com/valr/go-std/stringsx"
 )
 
-// Return the rotated string matrix.
+// RotateStrMatrix returns the rotated string matrix.
 func RotateStrMatrix(matrix []string) []string {
 	var rotated []string
 	for i := range len(matrix[0]) {
@@ -17,7 +18,7 @@ func RotateStrMatrix(matrix []string) []string {
 	return rotated
 }
 
-// Return the string matrix read diagonally.
+// DiagonalStrMatrix returns the string matrix read diagonally.
 func DiagonalStrMatrix(matrix []string) []string {
 	var diagonals []string
 	rows, cols := len(matrix), len(matrix[0])
@@ -31,7 +32,7 @@ func DiagonalStrMatrix(matrix []string) []string {
 	return diagonals
 }
 
-// Return the string matrix read counter diagonally.
+// CounterDiagonalStrMatrix returns the string matrix read counter diagonally.
 func CounterDiagonalStrMatrix(matrix []string) []string {
 	var counterDiagonals []string
 	for i := range matrix {

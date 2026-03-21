@@ -1,3 +1,4 @@
+// Package strconvx provides utility functions for string conversion.
 package strconvx
 
 import (
@@ -5,7 +6,7 @@ import (
 	"strconv"
 )
 
-// Convert the string to int and return the value.
+// StrToInt converts the string to int and return the value.
 func StrToInt(s string) int {
 	num, err := strconv.Atoi(s)
 	if err != nil {
@@ -14,7 +15,7 @@ func StrToInt(s string) int {
 	return num
 }
 
-// Convert the int to string and return the value.
+// IntToStr converts the int to string and return the value.
 func IntToStr(n int) string {
 	return strconv.Itoa(n)
 }

@@ -7,7 +7,7 @@ A collection of Go packages extending the standard library
 
 ## Packages
 
-- `mathx` — numeric utilities (abs, sum, product)
+- `mathx` — math utilities (abs, sum, product)
 - `matrix` — simple matrix transformations
 - `slicesx` — slice utilities (filter, map, reduce, intersect, etc.)
 - `strconvx` — conversion between strings and integers

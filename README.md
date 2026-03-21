@@ -7,12 +7,12 @@ A collection of Go packages extending the standard library
 
 ## Packages
 
-- `mathx` — numeric helpers (abs, sum, product)
+- `mathx` — numeric utilities (abs, sum, product)
 - `matrix` — simple matrix transformations
-- `slicesx` — slice helpers (filter, map, reduce, intersect, etc.)
+- `slicesx` — slice utilities (filter, map, reduce, intersect, etc.)
 - `strconvx` — conversion between strings and integers
-- `stringsx` — string helpers (reverse, split by multiple separators)
-- `syncx` — sync helpers (wait with timeout)
-- `util` — other helpers (source info, variadic wrapper)
+- `stringsx` — string utilities (reverse, split by multiple separators)
+- `syncx` — sync utilities (wait with timeout)
+- `util` — other utilities (source info, variadic wrapper)
 
-> **Note:** These helpers are intended for convenience and may not be optimized for performance or memory usage.
+> **Note:** These utilities are intended for convenience and may not be optimized for performance or memory usage.
